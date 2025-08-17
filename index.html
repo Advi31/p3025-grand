@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puzzle 3025 — Grand Edition (M1 Turbo)</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <h1>⚡ Puzzle <span>3025</span> <em>M1 Turbo</em></h1>
+  <div class="controls">
+    <label>Theme
+      <select id="themeSel">
+        <option value="shapes" selected>Shapes</option>
+        <option value="flags">Country Flags</option>
+        <option value="gods">Sacred Symbols</option>
+        <option value="currencies">Currencies</option>
+        <option value="numbers">Numbers</option>
+        <option value="math">Math Symbols</option>
+        <option value="famous">Famous Persons</option>
+        <option value="ai">AI Glyphs</option>
+        <option value="cars">Cars</option>
+        <option value="heroes">Heroes</option>
+        <option value="heroines">Heroines</option>
+        <option value="cartoons">Cartoons</option>
+        <option value="foods">Foods</option>
+        <option value="custom">Custom (Paste List)</option>
+      </select>
+    </label>
+    <label>Level
+      <select id="levelSel">
+        <option value="4">Easy 4×4</option>
+        <option value="5" selected>Medium 5×5</option>
+        <option value="6">Hard 6×6</option>
+      </select>
+    </label>
+    <label>Mode
+      <select id="modeSel">
+        <option value="solo" selected>Solo</option>
+        <option value="pvp">2 Players</option>
+        <option value="cpu_e">Vs CPU (Easy)</option>
+        <option value="cpu_m">Vs CPU (Medium)</option>
+        <option value="cpu_h">Vs CPU (Hard)</option>
+      </select>
+    </label>
+    <button id="newGame">New</button>
+    <button id="startPeek">Peek</button>
+    <button id="startRecall" disabled>Recall</button>
+    <button id="dailyBtn" title="Daily challenge by date seed">Daily</button>
+    <button id="shareBtn">Share</button>
+    <button id="leaderBtn">Leaderboards</button>
+    <button id="hintBtn" title="Peek one tile (cost 5 coins)">Hint (5)</button>
+    <label class="tog"><input type="checkbox" id="soundToggle" checked>Sound</label>
+    <label class="tog"><input type="checkbox" id="vibeToggle" checked>Haptics</label>
+  </div>
+  <div class="stats">
+    <div>⏱ <span id="time">00:00</span></div>
+    <div>🎯 <span id="scoreA">0</span> <span id="playerALabel">(You)</span></div>
+    <div id="scoreBWrap" class="hidden">🤖/🧑 <span id="scoreB">0</span> <span id="playerBLabel"></span></div>
+    <div>🪙 <span id="coins">0</span></div>
+    <div>Phase: <b id="phaseLabel">Ready</b></div>
+  </div>
+</header>
+
+<main>
+  <aside class="sidebar">
+    <h3>Icon List</h3>
+    <p class="hint">Recall: pehle icon choose karein, phir box par click.</p>
+    <div id="iconList" class="iconlist"></div>
+    <div class="ach">
+      <h4>Achievements</h4>
+      <ul id="achList"></ul>
+    </div>
+    <div class="custom hidden" id="customBox">
+      <h4>Custom Items</h4>
+      <textarea id="customText" placeholder="One item per line..."></textarea>
+      <button id="applyCustom">Use List</button>
+    </div>
+  </aside>
+  <div class="scene">
+    <div id="board" class="board"></div>
+  </div>
+</main>
+
+<footer>
+  <p>Original vector art • Store-safe • PWA offline ready.</p>
+</footer>
+
+<div id="endModal" class="modal hidden">
+  <div class="modal-card">
+    <h3>🏁 Result</h3>
+    <p id="resultText"></p>
+    <div class="shareRow">
+      <button id="copyResult">Copy Result</button>
+      <button id="playAgain">Play again</button>
+    </div>
+  </div>
+</div>
+
+<div id="leaderModal" class="modal hidden">
+  <div class="modal-card">
+    <h3>🏆 Local Leaderboard</h3>
+    <div id="lbWrap"></div>
+    <button id="closeLeader">Close</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js');}</script>
+</body>
+</html>
