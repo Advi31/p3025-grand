@@ -112,3 +112,56 @@ button:active {
   0% { box-shadow: 0 0 5px #ff0000; }
   100% { box-shadow: 0 0 20px #ff0000; }
 }
+/* ==== CARD FLIP ANIMATION ==== */
+.card {
+  width: 100px;
+  height: 100px;
+  perspective: 1000px;
+  position: relative;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+}
+
+.card-front {
+  background: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #fff;
+}
+
+.card-back {
+  background: white;
+  transform: rotateY(180deg);
+}
+
+/* ==== WIN GLOW EFFECT ==== */
+@keyframes winGlow {
+  0% { box-shadow: 0 0 10px #0f0; }
+  50% { box-shadow: 0 0 30px #0f0; }
+  100% { box-shadow: 0 0 10px #0f0; }
+}
+
+.win {
+  animation: winGlow 1s infinite;
+}
