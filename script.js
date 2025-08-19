@@ -399,3 +399,16 @@ applyCustom.addEventListener('click', ()=>{
 })();
 
 setupGame({seed});
+// Flip on click
+document.addEventListener("click", function(e) {
+  if (e.target.closest(".card")) {
+    e.target.closest(".card").classList.toggle("flipped");
+  }
+});
+
+// Example: Add win effect on game complete
+function showWinEffect() {
+  document.querySelectorAll(".card").forEach(card => {
+    card.classList.add("win");
+  });
+}
