@@ -87,3 +87,28 @@ button:hover {
 button:active {
   transform: scale(0.95);
 }
+/* ============================= */
+/* Card Flip + Glow Animations   */
+/* ============================= */
+
+/* Card flip animation */
+.card {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+/* Glow success animation */
+@keyframes glowSuccess {
+  0% { box-shadow: 0 0 5px #00ff00; }
+  100% { box-shadow: 0 0 20px #00ff00; }
+}
+
+/* Glow fail animation */
+@keyframes glowFail {
+  0% { box-shadow: 0 0 5px #ff0000; }
+  100% { box-shadow: 0 0 20px #ff0000; }
+}
