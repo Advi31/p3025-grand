@@ -24,7 +24,14 @@ const coinEl=document.getElementById('coins');
 
 const board=document.getElementById('board');
 const iconList=document.getElementById('iconList');
-const achList=document.getElementById('achList');
+const achList=document.getElementById('achList');// --------- Sound Function ---------
+function playSound(id) {
+  const sound = document.getElementById(id);
+  if (sound) {
+    sound.currentTime = 0; // reset sound
+    sound.play();
+  }
+}
 const customBox=document.getElementById('customBox');
 const customText=document.getElementById('customText');
 const applyCustom=document.getElementById('applyCustom');
@@ -399,11 +406,22 @@ applyCustom.addEventListener('click', ()=>{
 })();
 
 setupGame({seed});
-// Flip on click
+// Flip on clickplaySound('flipSound');
+
 document.addEventListener("click", function(e) {
-  if (e.target.closest(".card")) {
+  if (e.target.closest(".card")) { 
+    // Example pseudo check (aapke game ke logic ke hisaab se update karna hoga)
+if (/* match condition */) {
+   playSound("successSound");
+} else {
+   playSound("failSound");
+}
+
     e.target.closest(".card").classList.toggle("flipped");
   }
+});
+card.addEventListener("click", () => {
+   // flip logic
 });
 
 // Example: Add win effect on game complete
