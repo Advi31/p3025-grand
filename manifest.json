@@ -1,10 +1,10 @@
 {
-  "name": "Puzzle 3025 — Grand Edition (M1 Turbo)",
-  "short_name": "P3025 Turbo",
-  "start_url": "./index.html",
+  "name": "Build Your Brain 3025",
+  "short_name": "Brain3025",
+  "start_url": ".",
   "display": "standalone",
-  "background_color": "#070a1a",
-  "theme_color": "#0b0e24",
+  "background_color": "#ffffff",
+  "theme_color": "#4b0082",
   "icons": [
     {
       "src": "icons/icon-192.png",
